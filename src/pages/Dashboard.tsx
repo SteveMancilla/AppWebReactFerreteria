@@ -6,7 +6,7 @@ import { FaUsers, FaBoxOpen, FaMoneyBillWave } from 'react-icons/fa'
 import React from 'react'
 
 interface CardProps {
-  icon: JSX.Element
+  icon: React.ReactNode
   title: string
   value: number
   color: string
