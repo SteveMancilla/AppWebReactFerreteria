@@ -3,7 +3,6 @@ import Sidebar from '../components/Sidebar'
 import { db } from '../firebase/config'
 import { collection, getDocs } from 'firebase/firestore'
 import { FaUsers, FaBoxOpen, FaMoneyBillWave } from 'react-icons/fa'
-import React from 'react'
 
 interface CardProps {
   icon: React.ReactNode
