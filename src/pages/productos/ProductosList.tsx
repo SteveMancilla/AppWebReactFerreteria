@@ -45,11 +45,11 @@ export default function ProductosList() {
         <div className="flex justify-between items-center mb-6 flex-wrap gap-4">
           <h1 className="text-3xl font-bold">Productos</h1>
           <Link
-        to="/productos/nuevo"
-        className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
-        >
-          + Nuevo producto
-        </Link>
+          to="/productos/nuevo"
+          className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+          >
+            + Nuevo producto
+          </Link>
         </div>
 
         {/* LISTADO DE PRODUCTOS */}

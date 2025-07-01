@@ -28,7 +28,7 @@ export default function ProductoCard({ producto, onDelete }: ProductoCardProps) 
 
   return (
     <div className="border rounded-lg p-4 bg-white shadow-md flex flex-col">
-      <img src={imageUrl} alt={producto.nombre} className="w-full h-40 object-cover rounded mb-4" />
+      <img src={imageUrl} alt={producto.nombre} className="w-full h-40 object-contain rounded mb-4 bg-gray-100" />
       <h3 className="text-lg font-bold">{producto.nombre}</h3>
       <p className="text-sm text-gray-600 mb-2">{producto.descripcion}</p>
       <ul className="text-sm mb-3">
