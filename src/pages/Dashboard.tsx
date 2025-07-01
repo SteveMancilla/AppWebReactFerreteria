@@ -3,7 +3,7 @@ import Sidebar from '../components/Sidebar'
 import { db } from '../firebase/config'
 import { collection, getDocs } from 'firebase/firestore'
 import { FaUsers, FaBoxOpen, FaMoneyBillWave } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+
 
 interface CardProps {
   icon: React.ReactNode
@@ -79,15 +79,12 @@ export default function Dashboard() {
     </div>
   )
 }
-
+//revisar la nevagacion con href
 function SectionCard({ title, href }: { title: string, href: string }) {
   return (
-    <Link
-      to={href}
-      className="border border-gray-300 rounded-xl p-6 hover:shadow-lg transition cursor-pointer bg-white block"
-    >
+    <a href={href} className="border border-gray-300 rounded-xl p-6 hover:shadow-lg transition cursor-pointer bg-white">
       <h3 className="text-lg font-bold text-gray-800 mb-2">{title}</h3>
       <p className="text-sm text-gray-500">Ir a {title.toLowerCase()}.</p>
-    </Link>
+    </a>
   )
 }
