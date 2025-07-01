@@ -1,6 +1,7 @@
 // src/pages/productos/ProductoCard.tsx
 import { doc, deleteDoc } from 'firebase/firestore'
 import { db } from '../../firebase/config'
+import { Link } from 'react-router-dom'
 
 interface ProductoCardProps {
   producto: any
@@ -8,7 +9,10 @@ interface ProductoCardProps {
 }
 
 export default function ProductoCard({ producto, onDelete }: ProductoCardProps) {
-  const imageUrl = `https://drive.google.com/uc?id=${producto.imagen_drive_id}`
+  //const imageUrl = `https://drive.google.com/uc?export=view&id=${producto.imagen_drive_id}`
+  const originalDriveUrl = `https://drive.google.com/uc?export=view&id=${producto.imagen_drive_id}`;
+  //const imageUrl = `https://drive.google.com/thumbnail?id=${producto.imagen_drive_id}`
+  const imageUrl = `https://images.weserv.nl/?url=${encodeURIComponent(originalDriveUrl.replace('https://', ''))}`;
 
   const handleDelete = async () => {
     const confirm = window.confirm(`¿Estás seguro de eliminar "${producto.nombre}"?`)
@@ -34,7 +38,7 @@ export default function ProductoCard({ producto, onDelete }: ProductoCardProps) 
         <li><strong>Disponible:</strong> {producto.disponible ? 'Sí' : 'No'}</li>
       </ul>
       <div className="flex gap-4 mt-auto">
-        <a href={`/productos/editar/${producto.id}`} className="text-blue-600 hover:underline">Editar</a>
+        <Link to={`/productos/editar/${producto.id}`} className="text-blue-600 hover:underline">Editar</Link>
         <button onClick={handleDelete} className="text-red-600 hover:underline">Eliminar</button>
       </div>
     </div>

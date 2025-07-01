@@ -3,6 +3,7 @@ import { collection, getDocs, query, orderBy, limit, startAfter } from 'firebase
 import { db } from '../../firebase/config'
 import ProductoCard from './ProductoCard'
 import Sidebar from '../../components/Sidebar'
+import { Link } from 'react-router-dom'
 
 const PAGE_SIZE = 15
 
@@ -43,12 +44,12 @@ export default function ProductosList() {
         {/* TÍTULO Y BOTÓN */}
         <div className="flex justify-between items-center mb-6 flex-wrap gap-4">
           <h1 className="text-3xl font-bold">Productos</h1>
-          <a
-            href="/productos/nuevo"
-            className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
-          >
-            + Nuevo producto
-          </a>
+          <Link
+        to="/productos/nuevo"
+        className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+        >
+          + Nuevo producto
+        </Link>
         </div>
 
         {/* LISTADO DE PRODUCTOS */}
