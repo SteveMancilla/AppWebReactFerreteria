@@ -6,6 +6,7 @@ import { AuthProvider } from './firebase/useAuth'
 import ProductosList from './pages/productos/ProductosList'
 import NuevoProducto from './pages/productos/NuevoProducto'
 import EditarProducto from './pages/productos/EditarProducto'
+import UsuariosList from './pages/usuarios/UsuariosList'
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
           <Route path='/productos' element={<ProductosList />} />
           <Route path="/productos/nuevo" element={<NuevoProducto />} />
           <Route path="/productos/editar/:id" element={<EditarProducto />} />
+          <Route path="/usuarios" element={<UsuariosList />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>

@@ -11,6 +11,7 @@ export default function ProductosList() {
   const [productos, setProductos] = useState<any[]>([])
   const [lastDoc, setLastDoc] = useState<any>(null)
   const [loading, setLoading] = useState(false)
+  const [SidebarOpen, setSidebarOpen] = useState(true) //para nuestro sidebar, para que el contenido se ajuste al abrir o cerrar el sidebar
 
   const fetchProductos = async () => {
     setLoading(true)
@@ -39,8 +40,8 @@ export default function ProductosList() {
 
   return (
     <div className="flex">
-      <Sidebar />
-      <main className="ml-20 md:ml-64 p-6 w-full min-h-screen bg-gray-100">
+      <Sidebar onToggle={setSidebarOpen}/>
+      <main className={`transition-all duration-300 ${SidebarOpen ? 'ml-64' : 'ml-20'} p-6 w-full min-h-screen bg-gray-100`}>
         {/* TÍTULO Y BOTÓN */}
         <div className="flex justify-between items-center mb-6 flex-wrap gap-4">
           <h1 className="text-3xl font-bold">Productos</h1>

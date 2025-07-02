@@ -31,6 +31,7 @@ export default function Dashboard() {
   const [usersCount, setUsersCount] = useState(0)
   const [productsCount, setProductsCount] = useState(0)
   const [totalSales, setTotalSales] = useState(0)
+  const [sidebarOpen, setSidebarOpen] = useState(true) // Para manejar el estado del sidebar, para que el contenido se ajuste al abrir o cerrar el sidebar
 
   useEffect(() => {
     const fetchData = async () => {
@@ -60,8 +61,8 @@ export default function Dashboard() {
 
   return (
     <div className="flex">
-      <Sidebar />
-      <main className="ml-20 md:ml-64 p-6 w-full">
+      <Sidebar onToggle={setSidebarOpen}/>
+      <main className={`transition-all duration-300 ${sidebarOpen ? 'ml-64' : 'ml-20'} p-6 w-full min-h-screen bg-gray-100`}>
         <h1 className="text-3xl font-bold mb-6">Bienvenido al panel</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
