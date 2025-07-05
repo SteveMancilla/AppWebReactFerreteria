@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 interface CardProps {
   icon: React.ReactNode
   title: string
-  value: number
+  value: string | number;
   color: string
 }
 
@@ -68,7 +68,7 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <Card icon={<FaUsers />} title="Usuarios" value={usersCount} color="bg-blue-600" />
           <Card icon={<FaBoxOpen />} title="Productos" value={productsCount} color="bg-green-600" />
-          <Card icon={<FaMoneyBillWave />} title="Ventas Totales" value={totalSales} color="bg-yellow-600" />
+          <Card icon={<FaMoneyBillWave />} title="Ventas Totales" value={totalSales.toFixed(2)} color="bg-yellow-600" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

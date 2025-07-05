@@ -4,6 +4,8 @@ import { db } from '../../firebase/config'
 import Sidebar from '../../components/Sidebar'
 import { Link } from 'react-router-dom'
 import { FaPlus } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
+
 
 interface Usuario {
   id: string
@@ -17,6 +19,8 @@ interface Usuario {
 export default function UsuariosList() {
   const [usuarios, setUsuarios] = useState<Usuario[]>([])
   const [sidebarOpen, setSidebarOpen] = useState(true)
+  
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchUsuarios = async () => {
@@ -55,7 +59,7 @@ export default function UsuariosList() {
             </thead>
             <tbody>
               {usuarios.map((usuario, index) => (
-                <tr key={usuario.id} className="border-b hover:bg-gray-50">
+                <tr key={usuario.id} className="border-b hover:bg-gray-50" onClick={() => navigate(`/usuarios/${usuario.id}`)}>
                   <td className="px-6 py-4">{index + 1}</td>
                   <td className="px-6 py-4">{usuario.nombres} {usuario.apellidos}</td>
                   <td className="px-6 py-4">{usuario.correo || <span className="italic text-gray-400">null</span>}</td>
