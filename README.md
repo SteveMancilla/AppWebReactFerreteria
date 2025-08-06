@@ -20,7 +20,13 @@ Se desarrollo un sitio web básico que lista los productos, usuarios y permite h
 ```
 Enlace al proyecto en vercel:
 
-```Enlace: https://app-web-react-ferreteria.vercel.app/ 
+```
+Enlace: https://app-web-react-ferreteria.vercel.app/ 
 Usuario de prueba: luis@gmail.com
 Password: 123456
 ```
+
+<img width="1499" height="851" alt="image" src="https://github.com/user-attachments/assets/b55dac42-3c30-4897-953a-cee5ac5ef503" />
+<img width="1507" height="879" alt="image" src="https://github.com/user-attachments/assets/324f6977-aa87-439d-943e-fefa836164dd" />
+
+
